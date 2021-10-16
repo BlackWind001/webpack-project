@@ -4,8 +4,8 @@ const path = require('path');
 module.exports = {
   mode: 'none',
   entry: {
-    index: './src/index.js',
-    printMe: './src/print.js'
+    printMe: './src/print.js',
+    index: './src/index.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
