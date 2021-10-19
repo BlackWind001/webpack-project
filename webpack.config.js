@@ -12,7 +12,10 @@ module.exports = (env) => {
   // Entries
   config.entry = {
     printMe: './src/print.js',
-    index: './src/index.js'
+    index: {
+      import: './src/index.js',
+      dependOn: 'printMe'
+    }
   };
 
   // Individual modules and loader rules
@@ -32,7 +35,7 @@ module.exports = (env) => {
     })
   ];
 
-  if (env.mode === 'development') {
+  if (env.mode === 'production') {
     config.plugins.push(new BundleAnalyzerPlugin({
       generateStatsFile: true
     }));
